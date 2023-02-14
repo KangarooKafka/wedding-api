@@ -1,0 +1,25 @@
+{
+  "name": "wedding-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "config": "^3.3.9",
+    "dotenv": "^16.0.3",
+    "koa": "^2.14.1",
+    "koa-body": "^6.0.1",
+    "koa-pino-logger": "^4.0.0",
+    "koa-router": "^12.0.0",
+    "lodash": "^4.17.21",
+    "mongodb": "^5.0.1",
+    "mongoose": "^6.9.1",
+    "pino": "^8.10.0"
+  }
+}
