@@ -1,5 +1,5 @@
 import KoaRouter from "koa-router";
-import guestController from "../controllers/guestController";
+import guestController from "../controllers/guestController.js";
 
 // Set up router
 const guestRouter = new KoaRouter();
@@ -10,8 +10,7 @@ const baseRoute = '/guest';
 /* Routes */
 
 // POST route to create new guest
-guestRouter.post('add-guest',
-    baseRoute,
+guestRouter.post(baseRoute,
     guestController.addGuest
 );
 
@@ -26,14 +25,12 @@ guestRouter.get(baseRoute,
 );
 
 // PUT route to update a guest by ID
-guestRouter.put('update-guest',
-    `${baseRoute}/:id`,
+guestRouter.put(`${baseRoute}/:id`,
     guestController.updateGuest
 );
 
 // DELETE route to delete an guest
-guestRouter.delete('delete-guest',
-    `${baseRoute}/:id`,
+guestRouter.delete(`${baseRoute}/:id`,
     guestController.deleteGuest
 );
 
