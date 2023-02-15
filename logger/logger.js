@@ -10,10 +10,7 @@ const pinoLogger = () => {
     // Get environment, or dev by default
     const env = process.env.NODE_ENV ? process.env.NODE_ENV.trim() : 'dev'
 
-    // Enrich pino logger with formatting options if the Node Environment is dev
-    if (env === 'dev') {
-        return pino(config.get('pino'))
-    }
+
 
     return pino();
 }
