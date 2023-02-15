@@ -1,10 +1,8 @@
-import pinoLogger from "../../logger/logger";
-import Guest from "../models/guest.model";
+import pinoLogger from "../../logger/logger.js";
+import Guest from "../models/guest.model.js";
 import _ from 'lodash'
 import {Types} from "mongoose";
 
-// Logger
-const logger = pinoLogger();
 
 /**
  * Controller for guest-based endpoints and logic
@@ -25,7 +23,7 @@ class GuestController {
             ctx.status = 201;
 
             // Log results
-            logger.info(`Body: ${ctx.body}\nStatus: ${ctx.status}`);
+            console.log(`Body: ${ctx.body}\nStatus: ${ctx.status}`);
 
             await next();
         } catch(e) {
@@ -34,7 +32,7 @@ class GuestController {
             ctx.status = 500;
 
             // Log results
-            logger.info(`Body: ${e.message}\nStatus: ${ctx.status}`);
+            console.log(`Body: ${e.message}\nStatus: ${ctx.status}`);
 
             await next();
         }
@@ -58,7 +56,7 @@ class GuestController {
             ctx.status = 200;
 
             // Log results
-            logger.info(`Body: ${ctx.body}\nStatus: ${ctx.status}`);
+            console.log(`Body: ${ctx.body}\nStatus: ${ctx.status}`);
 
             await next();
         } catch(e) {
@@ -67,7 +65,7 @@ class GuestController {
             ctx.status = e.status;
 
             // Log results
-            logger.info(`Body: ${e.message}\nStatus: ${ctx.status}`);
+            console.log(`Body: ${e.message}\nStatus: ${ctx.status}`);
 
             await next();
         }
@@ -91,7 +89,7 @@ class GuestController {
             ctx.status = 200;
 
             // Log results
-            logger.info(`Body: ${ctx.body}\nStatus: ${ctx.status}`);
+            console.log(`Body: ${ctx.body}\nStatus: ${ctx.status}`);
 
             await next();
         } catch(e) {
@@ -100,7 +98,7 @@ class GuestController {
             ctx.status = e.status;
 
             // Log results
-            logger.info(`Body: ${e.message}\nStatus: ${ctx.status}`);
+            console.log(`Body: ${e.message}\nStatus: ${ctx.status}`);
 
             await next();
         }
@@ -124,7 +122,7 @@ class GuestController {
             ctx.status = 200;
 
             // Log results
-            logger.info(`Body: Success\nStatus: ${ctx.status}`);
+            console.log(`Body: Success\nStatus: ${ctx.status}`);
 
             await next();
         } catch(e) {
@@ -133,7 +131,7 @@ class GuestController {
             ctx.status = e.status;
 
             // Log results
-            logger.info(`Body: ${e.message}\nStatus: ${ctx.status}`);
+            console.log(`Body: ${e.message}\nStatus: ${ctx.status}`);
 
             await next();
         }
@@ -157,7 +155,7 @@ class GuestController {
             ctx.status = 200;
 
             // Log results
-            logger.info(`Body: Success\nStatus: ${ctx.status}`);
+            console.log(`Body: Success\nStatus: ${ctx.status}`);
 
             await next();
         } catch(e) {
@@ -166,7 +164,7 @@ class GuestController {
             ctx.status = e.status;
 
             // Log results
-            logger.info(`Body: ${e.message}\nStatus: ${ctx.status}`);
+            console.log(`Body: ${e.message}\nStatus: ${ctx.status}`);
 
             await next();
         }
