@@ -1,8 +1,4 @@
-import { RouterContext } from 'koa-router'
-import pinoLogger from '../../logger/logger'
-
-// Logger
-const logger = pinoLogger();
+import pkg from 'koa-router'
 
 /**
  * Controller for admin endpoints and logic
@@ -21,7 +17,7 @@ class AdminController {
             ctx.status = 200;
 
             // Log response
-            logger.info(`Body: Server running\nStatus: ${ctx.status}`);
+            console.log(`Body: Server running\nStatus: ${ctx.status}`);
 
             await next();
         } catch (e) {
@@ -30,7 +26,7 @@ class AdminController {
             ctx.status = 500;
 
             // Log response
-            logger.info(`Body: ${e.message}\nStatus: ${ctx.status}`);
+            console.log(`Body: ${e.message}\nStatus: ${ctx.status}`);
 
             await next();
         }
