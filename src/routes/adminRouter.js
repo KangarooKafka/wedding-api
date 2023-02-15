@@ -1,5 +1,5 @@
 import KoaRouter from 'koa-router';
-import adminController from "../controllers/adminController";
+import adminController from "../controllers/adminController.js";
 
 // Set up router
 const adminRouter = new KoaRouter();
