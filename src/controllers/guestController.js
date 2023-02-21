@@ -1,4 +1,3 @@
-import pinoLogger from "../../logger/logger.js";
 import Guest from "../models/guest.model.js";
 import _ from 'lodash'
 import {Types} from "mongoose";
@@ -62,7 +61,7 @@ class GuestController {
         } catch(e) {
             // Response to client
             ctx.body = {message : e.message};
-            ctx.status = e.status;
+            ctx.status = 500;
 
             // Log results
             console.log(`Body: ${e.message}\nStatus: ${ctx.status}`);
@@ -95,7 +94,7 @@ class GuestController {
         } catch(e) {
             // Response to client
             ctx.body = {message : e.message};
-            ctx.status = e.status;
+            ctx.status = 500;
 
             // Log results
             console.log(`Body: ${e.message}\nStatus: ${ctx.status}`);
@@ -128,7 +127,7 @@ class GuestController {
         } catch(e) {
             // Response to client
             ctx.body = {message : e.message};
-            ctx.status = e.status;
+            ctx.status = 500;
 
             // Log results
             console.log(`Body: ${e.message}\nStatus: ${ctx.status}`);
@@ -161,7 +160,7 @@ class GuestController {
         } catch(e) {
             // Response to client
             ctx.body = {message : e.message};
-            ctx.status = e.status;
+            ctx.status = 500;
 
             // Log results
             console.log(`Body: ${e.message}\nStatus: ${ctx.status}`);
