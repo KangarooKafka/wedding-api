@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import config from "config";
 import * as process from "process";
 
 import pinoLogger from '../../logger/logger.js';
@@ -23,11 +22,11 @@ const dbConnect = async () => {
 
     // Try to connect to the database
     try {
-        await mongoose.connect(mongoConnect, options);
+        await mongoose.connect(process.env.MONGODB_URI || mongoConnect, options);
 
         // Ternary to only show the URI if not in PROD since at the moment the URI includes user/pass.
         process.env.NODE_ENV !== 'prod'
-            ? console.log(`Connected to MongoDB at url ${mongoConnect}`)
+            ? console.log(`Connected to MongoDB at url ${process.env.MONGODB_URI || mongoConnect}`)
             : console.log('Connected to MongoDB');
     } catch (e) {
         console.log(`There was an error loading MongoDB: ${e.message}`);

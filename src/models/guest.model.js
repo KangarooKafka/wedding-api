@@ -12,7 +12,7 @@ const guestSchema = new Schema({
         type: String,
     },
     p1Coming: {
-        type: Boolean,
+        type: String,
     },
     p2FirstName: {
         type: String,
@@ -23,25 +23,32 @@ const guestSchema = new Schema({
         default: ""
     },
     p2Coming: {
-        type: Boolean,
+        type: String,
     },
     children: {
         type: String,
         default: ""
     },
+    chAttending: {
+        type: String,
+        default: ""
+    },
     rsvped: {
-        type: Boolean,
-        default: false,
+        type: String,
+        default: "false",
     },
     stylePref: {
         type: String,
         default: ""
     },
-    email: {
+    p1Email: {
+        type: String,
+    },
+    p2Email: {
         type: String,
     },
     villaInt: {
-        type: Boolean,
+        type: String,
     },
     roommates: {
         type: String,
