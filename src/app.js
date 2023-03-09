@@ -59,7 +59,7 @@ if (process.env.NODE_ENV !== 'test') {
     dbConnect();
 
     app.listen(port, host, () => {
-        console.log(`Server listening at http://${host}:${port}/api`);
+        console.log(`Server listening at http://${host}:${port}`);
     });
 }
 
