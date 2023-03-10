@@ -5,7 +5,7 @@ import adminController from "../controllers/adminController.js";
 const adminRouter = new KoaRouter();
 
 // Base router for REST endpoints
-const baseRoute = '/admin';
+const baseRoute = '/api/admin';
 
 /* Routes */
 
