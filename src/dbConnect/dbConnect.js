@@ -1,9 +1,6 @@
 import mongoose from "mongoose";
 import * as process from "process";
 
-import pinoLogger from '../../logger/logger.js';
-import pino from "pino";
-
 /**
  * Connects the API to MongoDB database
  */
@@ -15,10 +12,6 @@ const dbConnect = async () => {
         autoIndex: true,
         family: 4
     };
-
-    // Create logger
-    //const logger = pinoLogger();
-    const logger = pino;
 
     // Try to connect to the database
     try {
