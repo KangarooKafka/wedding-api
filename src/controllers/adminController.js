@@ -1,5 +1,3 @@
-import pkg from 'koa-router'
-
 /**
  * Controller for admin endpoints and logic
  */
