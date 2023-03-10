@@ -5,7 +5,7 @@ import guestController from "../controllers/guestController.js";
 const guestRouter = new KoaRouter();
 
 // Base route for Guest REST endpoints
-const baseRoute = '/guest';
+const baseRoute = '/api/guest';
 
 /* Routes */
 
