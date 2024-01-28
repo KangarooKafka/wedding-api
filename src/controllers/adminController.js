@@ -152,11 +152,6 @@ class AdminController {
             // If puzzle not found
             if (_.isNil(puzzle)) ctx.throw(404, 'Puzzle not found')
 
-            // Add the new puzzle to all the guests
-            const res = await Guest.updateMany({},
-                {$pull: { puzzle_answers: { puzzle_id: Types.ObjectId(ctx.params.id)}
-                }});
-
             // Response to client
             ctx.body = {message: "Success"};
             ctx.status = 200;
@@ -189,6 +184,11 @@ class AdminController {
 
             // If guest not found
             if (_.isNil(puzzle)) ctx.throw(404, 'Puzzle not found')
+
+            // Remove the new puzzle to all the guests
+            const res = await Guest.updateMany({},
+                {$pull: { puzzle_answers: { puzzle_id: Types.ObjectId(ctx.params.id)}
+                    }});
 
             // Response to client
             ctx.body = {message: 'Success'};
