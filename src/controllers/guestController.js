@@ -137,7 +137,7 @@ class GuestController {
     }
 
     /**
-     * Deletes an guest
+     * Deletes a guest
      * @param  ctx The request context object.
      * @param  next The next client request.
      */

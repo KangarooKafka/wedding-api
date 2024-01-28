@@ -59,6 +59,25 @@ const guestSchema = new Schema({
     notes: {
         type: String,
     },
+    puzzle_answers: {
+        type: [{
+            label: {
+                type: String,
+            },
+            entry: {
+                type: String,
+                default: "",
+            },
+            correct: {
+                type: Boolean,
+                default: false,
+            },
+            puzzle_id: {
+                type: Schema.Types.ObjectId,
+                ref: 'Puzzle',
+            }
+        }],
+    },
 });
 
 export default model('Guest', guestSchema)
