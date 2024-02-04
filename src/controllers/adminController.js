@@ -105,6 +105,40 @@ class AdminController {
     }
 
     /**
+     * Adds a new tracker and adds it to each guest
+     * @param ctx The request context object containing data for the new puzzle.
+     * @param next The next client request.
+     */
+    async exclusiveAddTracker(ctx, next) {
+        try {
+
+            //Deletes old tracker
+            await Tracker.findOneAndDelete();
+
+            // Create new tracker entry
+            const tracker = await new Tracker(ctx.request.body).save();
+
+            // Response to client
+            ctx.body = tracker;
+            ctx.status = 201;
+
+            // Log results
+            console.log(`Body: ${ctx.body}\nStatus: ${ctx.status}`);
+
+            await next();
+        } catch(e) {
+            // Response to client
+            ctx.body = {message : e.message};
+            ctx.status = 502;
+
+            // Log results
+            console.log(`Body: ${e.message}\nStatus: ${ctx.status}`);
+
+            await next();
+        }
+    }
+
+    /**
      * Returns a single puzzle by id
      * @param  ctx The request context object containing the puzzle requested.
      * @param  next The next client request.

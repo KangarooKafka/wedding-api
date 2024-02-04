@@ -16,6 +16,11 @@ adminRouter.post(`${baseRoute}/status`,
     adminController.addTracker
 );
 
+// POST route to create new tracker
+adminRouter.post(`${baseRoute}/status/delete-and-add`,
+    adminController.exclusiveAddTracker
+);
+
 // POST route to create new puzzle
 adminRouter.post(baseRoute,
     adminController.addPuzzle
