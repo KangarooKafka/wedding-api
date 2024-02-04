@@ -6,7 +6,7 @@ const guestSchema = new Schema({
         type: String,
     },
     answer: {
-        type: String,
+        type: [String],
     },
     solved: {
         type: Boolean,

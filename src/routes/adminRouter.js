@@ -11,6 +11,11 @@ const baseRoute = '/api/admin';
 
 /* Routes */
 
+// POST route to create new tracker
+adminRouter.post(`${baseRoute}/status`,
+    adminController.addTracker
+);
+
 // POST route to create new puzzle
 adminRouter.post(baseRoute,
     adminController.addPuzzle
@@ -21,19 +26,39 @@ adminRouter.get(`${baseRoute}/:id`,
     adminController.getPuzzle
 );
 
+// PUT route to check if an submission set is correct
+adminRouter.put(`${baseRoute}/check/:id`,
+    adminController.checkAnswers
+);
+
+// GET route to search tracker by query or get all puzzles if no queries
+adminRouter.get(`${baseRoute}/status/all`,
+    adminController.searchTracker
+);
+
 // GET route to search puzzles by query or get all puzzles if no queries
 adminRouter.get(baseRoute,
     adminController.searchPuzzles
 );
 
-// PUT route to update a guest by ID
+// PUT route to update a puzzle by ID
 adminRouter.put(`${baseRoute}/:id`,
     adminController.updatePuzzle
 );
 
-// DELETE route to delete an guest
+// PUT route to update a tracker by ID
+adminRouter.put(`${baseRoute}/status/:id`,
+    adminController.updateTracker
+);
+
+// DELETE route to delete an puzzle
 adminRouter.delete(`${baseRoute}/:id`,
     adminController.deletePuzzle
+);
+
+// DELETE route to delete an tracker
+adminRouter.delete(`${baseRoute}/status/:id`,
+    adminController.deleteTracker
 );
 
 // Export router
